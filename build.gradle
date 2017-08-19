@@ -1,0 +1,35 @@
+group 'spring-boot-group'
+version '1.0-SNAPSHOT'
+
+
+
+buildscript {
+
+    repositories {
+        maven { url 'https://repo.spring.io/libs-milestone' }
+    }
+
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.0.0.M3'
+
+
+    }
+}
+
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'org.springframework.boot'
+
+repositories {
+    maven { url 'https://repo.spring.io/libs-milestone' }
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web:2.0.0.M3'
+
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa:2.0.0.M3'
+
+    compile 'mysql:mysql-connector-java:5.1.43'
+}
