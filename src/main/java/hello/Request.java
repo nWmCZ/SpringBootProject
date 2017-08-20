@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 public class Request {
     private Integer id;
     private String source;
+    private String param;
     private LocalDateTime dateTime;
 
     @Id
@@ -38,11 +39,20 @@ public class Request {
         this.dateTime = dateTime;
     }
 
+    public String getParam() {
+        return param;
+    }
+
+    public void setParam(String param) {
+        this.param = param;
+    }
+
     @Override
     public String toString() {
         return "Request{" +
                 "id=" + id +
                 ", source='" + source + '\'' +
+                ", param='" + param + '\'' +
                 ", dateTime=" + dateTime +
                 '}';
     }

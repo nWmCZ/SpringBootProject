@@ -17,11 +17,13 @@ public class SampleController {
 
     @RequestMapping("/")
     @ResponseBody
-    String home(@RequestHeader(value="User-Agent", defaultValue="defaultValue") String userAgent) {
+    String home(@RequestHeader(value="User-Agent", defaultValue="defaultValue") String userAgent,
+                @RequestParam(value = "param", required = false) String param) {
 
         Request r = new Request();
         r.setSource(userAgent);
         r.setDateTime(LocalDateTime.now());
+        r.setParam(param);
 
         requestRepository.save(r);
 
