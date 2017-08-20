@@ -17,10 +17,10 @@ public class SampleController {
 
     @RequestMapping("/")
     @ResponseBody
-    String home() {
+    String home(@RequestHeader(value="User-Agent", defaultValue="defaultValue") String userAgent) {
 
         Request r = new Request();
-        r.setSource("web");
+        r.setSource(userAgent);
         r.setDateTime(LocalDateTime.now());
 
         requestRepository.save(r);
