@@ -6,6 +6,9 @@
 ## run jar
 java -jar ./build/libs/spring-boot-artifact-1.0-SNAPSHOT.jar
 
+## custom properties (assuming application.properties)
+--spring.config.location=/opt/config/
+
 ## build war
 ./gradlew war
 
